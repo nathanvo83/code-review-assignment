@@ -7,6 +7,17 @@ namespace InterviewCodeReviewTest
 {
 	public class Test1
 	{
+		/**
+		 * Code review:
+		 * 1. type data: status should be particular e.g active, deactive, pending.
+		 * -> can use enum type here
+		 * 2. need to handle status data to prevent form SQL injection attack, 
+		 * DON'T pass the parameters directly
+		 * -> recomment: using store proceture
+		 * 3. need to handle connection.
+		 * -> please have a view at sample below
+		 */
+
 		// Called by web API and returns list of strongly typed customer address for given status
 		// CustomerAddress is populated by external import and could be dirty
 		public IEnumerable<Address> GetCustomerNumbers(string status)
@@ -35,6 +46,14 @@ namespace InterviewCodeReviewTest
 			{
 				throw ex;
 			}
+			/*sample code*/
+			//finally
+			//{			
+			//	connection.Close();
+			//	connection.Dispose();
+			//}
+
+
 		}
 
 		private static Address StringToAddress(string addressString)

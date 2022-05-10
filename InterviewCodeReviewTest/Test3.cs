@@ -5,6 +5,13 @@ namespace InterviewCodeReviewTest
 {
 	public class Test3
 	{
+		/**
+		 * Code review:		 
+		 * 1. may need to handle the amount of MAX email be sending once time.
+		 * in case there are too many email e.g 100k, 200k the MS Outlook service may be crashed.
+		 * recomment: using queue to store the pending emails
+		 */
+
 		// This class represents a queue for email sending.
 		// There are multiple active queues at any given time and they have activities all the time.
 		// Each queue can be handled by multiple threads.

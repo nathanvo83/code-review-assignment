@@ -5,6 +5,15 @@ namespace InterviewCodeReviewTest
 {
 	public class Test2
 	{
+		/**
+		 * Code review:		 
+		 * 1. recomment: using store proceture and handle data at database level
+		 * 2. need to handle connection.
+		 * -> please have a view at sample below
+		 * 3. may need to throw out and log exceptions 
+		 * 4. move the result class into new file as it is used by many class e.g. EmailSendQueue.
+		 */
+
 		// Record customer purchase and update customer reward programme
 		public Result UpdateCustomerHistory(Purchase customerPurchase)
 		{
@@ -39,6 +48,14 @@ namespace InterviewCodeReviewTest
 
 				return Result.Failed();
 			}
+			/*sample code*/
+			//finally
+			//{			
+			//	connPruchase.Close();
+			//	connPruchase.Dispose();
+			//	connReward.Close();
+			//	connReward.Dispose();
+			//}
 		}
 	}
 
